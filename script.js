@@ -1,82 +1,28 @@
-'use strict';
+function convert() {
+    const inputValue = parseFloat(document.getElementById('inputValue').value);
+    const inputUnit = document.getElementById('inputUnit').value;
+    const outputUnit = document.getElementById('outputUnit').value;
+    let outputValue;
 
-
-
-/**
- * add event listener on multiple elements
- */
-
-const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
-  }
-}
-
-
-
-/**
- * NAVBAR TOGGLE FOR MOBILE
- */
-
-const navbar = document.querySelector("[data-navbar]");
-const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const overlay = document.querySelector("[data-overlay]");
-
-const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
-}
-
-addEventOnElements(navTogglers, "click", toggleNavbar);
-
-
-
-/**
- * HEADER
- * active header when window scroll down to 100px
- */
-
-const header = document.querySelector("[data-header]");
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 100) {
-    header.classList.add("active");
-  } else {
-    header.classList.remove("active");
-  }
-});
-
-
-
-/**
- * SCROLL REVEAL
- */
-
-const revealElements = document.querySelectorAll("[data-reveal]");
-const revealDelayElements = document.querySelectorAll("[data-reveal-delay]");
-
-const reveal = function () {
-  for (let i = 0, len = revealElements.length; i < len; i++) {
-    if (revealElements[i].getBoundingClientRect().top < window.innerHeight / 1.2) {
-      revealElements[i].classList.add("revealed");
+    if (isNaN(inputValue)) {
+        alert("Please enter a valid temperature value.");
+        return;
     }
-  }
-}
+    let tempInCelsius;
+    if (inputUnit === "Celsius") {
+        tempInCelsius = inputValue;
+    } else if (inputUnit === "Fahrenheit") {
+        tempInCelsius = (inputValue - 32) * 5 / 9;
+    } else if (inputUnit === "Kelvin") {
+        tempInCelsius = inputValue - 273.15;
+    }
+    if (outputUnit === "Celsius") {
+        outputValue = tempInCelsius;
+    } else if (outputUnit === "Fahrenheit") {
+        outputValue = (tempInCelsius * 9 / 5) + 32;
+    } else if (outputUnit === "Kelvin") {
+        outputValue = tempInCelsius + 273.15;
+    }
 
-for (let i = 0, len = revealDelayElements.length; i < len; i++) {
-  revealDelayElements[i].style.transitionDelay = revealDelayElements[i].dataset.revealDelay;
-}
-
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-
-/** Submit the form then after clear the page */
-
-window.onbeforeunload = () => {
-  for(const form of document.getElementsByTagName('form')) {
-    form.reset();
-  }
-}
-
-
+    document.getElementById('outputValue').textContent = outputValue.toFixed(2);
+}0
