@@ -3,57 +3,541 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Design Using HTML and CSS</title>
-    <link rel="stylesheet" type="text/css" href="watch.css">
+
+  <title>Samarth- Web developer</title>
+  <meta name="title" content="Samarth- Web developer.">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
+  <link rel="preload" as="image" href="./assets/images/Blog.svg">
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="data:image/jpeg;base64,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" width="350">
 
-            </div>
-            <div class="menu">
-                <a href="https://auto.mahindra.com/suv/scorpio-n/SCN.html#">🎇Home </a>
-                <a href="https://www.cardekho.com/mahindra/scorpio/specs">🎇Features </a>
-                <a href="https://www.carwale.com/mahindra-cars/scorpio/colours/">🎇Colours available </a>
-                <a href="https://en.wikipedia.org/wiki/Mahindra_Scorpio">More</a>
+  <header class="header" data-header>
+    <div class="container">
 
+      <a href="#" class="logo">
+        <img src="./assets/images/portfolio.png" width="110" height="40" alt="Julia home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#Skills" class="navbar-link">Skills</a>
+          </li>
+
+          <li>
+            <a href="#Projects" class="navbar-link">Projects</a>
+          </li>
+
+          <li>
+            <a href="#Contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <a href="samarthshukla20052gmail.com" class="contact-link">samarthshukla2005@gmail.com</a>
+
+          <a href="Mobno.:-7355248470" class="contact-link">+91 7355248470</a>
+        </div>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://github.com/Samarth7272" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/samarth-shukla-b72003293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link">
+              <ion-icon name='logo-linkedin'></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/User72723232" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/samarth7272_?igsh=cnplNjB6ZmlmYmQw" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.com/@Samarth0002" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section hero" aria-label="home">
+        <div class="container" id="about">
+
+          <figure class="hero-banner">
+            <img src="./assets/images/photo1.jpg" width="600" height="800" alt="Samarth" class="w-600"
+              data-reveal="top">
+          </figure>
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
+              I'm Samarth User Interface Designer & Frontent-Developer.
+            </h1>
+
+            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
+              Hello! I'm Samarth Shukla,A Web Developer having an experience  With HTML/CSS/Javascript and some other cool libraries and frameworks.Web development, also known as website development, refers to the tasks associated with creating, building, and maintaining websites and web applications that run online on a browser. It may, however, also include web design, web programming, and database management. </p>
+
+            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="0.3s">
+              <a href="./assets/images/Resume.72.pdf" class="btn btn-primary" download>My Resume</a>
+              <a href="#Contact" class="btn btn-secondary">Contact Me</a>
             </div>
-        </nav>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section class="what-do">
+        <div class="content">
+          <h2 class="h2 developer" data-reveal="top" data-reveal-delay="0.75s">
+            Web Developer Roles
+          </h2> 
+          <p class="para">A Fullstack developer roles consist of different technologies</p>
+          <div class="image1">
+            <img src="./assets/images/HTML5.png" width="80" alt="">
+            <img src="./assets/images/css.png" width="60" alt="">
+            <img src="./assets/images/js1.png" width="60" alt="">
+            <img src="./assets/images/node.png" width="60" alt="">
+            <img src="./assets/images/react.png" width="60" alt=""> 
+            <img src="./assets/images/mysql.png" width="60" alt=""> 
+            <img src="./assets/images/c++.png" width="60" alt=""> 
+          </div>
+          <p class="card-text">💎Devlops in the peacefull envornment as non error occuring</p>
+          <p class="card-text">💎Hacking is the act of gaining unauthorized access to a computer system or network to compromise digital devices. The intent behind hacking can vary, but it's often to access sensitive information, steal data, or disrupt services.</p>
+          <p class="card-text">💎A firewall is a security system that protects a network or computer from unauthorized access by monitoring and controlling incoming and outgoing network traffic.</p>
+        </div>
+
+
+        <div class="what-img" data-reveal="top" data-reveal-delay="0.9s">
+          <img src="./assets/images/pngwing.com.png" width="550">
+        </div>
+
+      </section>
+
+      <section class="section about" id="Skills" aria-label="about">
         <div class="container">
-            <div class="left">
-                <h1>Motor Craft<br></h1>
-                <p>✨Passion with dream vehicle....</p>
-                <button><a href="https://www.carlelo.com/mahindra-cars/scorpio-classic?utm_source=google&utm_medium=cpc&utm_campaign=scorpio-classic&gad_source=1&gclid=CjwKCAjwxY-3BhAuEiwAu7Y6s49oCFQiegCtt7Qs5lGfzV1J8W0qt4QwK0G2yzLAnyqYcGKOyXcqShoCxpwQAvD_BwE"> Book now</a></button>
-                <div class="line">
-                    <div class="box1"></div><br>
-                    <div class="box2"></div><br>
-                    <div class="box3"></div>
-                </div>
+
+          <div class="wrapper">
+
+            <div data-reveal="left">
+              <h2 class="h2 section-title">About My Skill</h2>
+
+              <p class="section-text" style="text-align: justify;">
+            Expressing my skill in various web development technologies as HTML, CSS, and JavaScript, I can create visually appealing and interactive user interfaces. My proficiency in ReactJS, a popular JavaScript library for building user interfaces, enhances my ability to develop dynamic and responsive web applications.
+              </p>
             </div>
+
+            <ul class="progress-list" data-reveal="right">
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Web Design</p>
+
+                  <span class="span">100 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 100%; background-color: #c7b1dd"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Mobile Design</p>
+
+                  <span class="span">35 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 50%; background-color: #8caeec"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Development</p>
+
+                  <span class="span">85 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 85%; background-color: #b0d4c1"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Tools</p>
+
+                  <span class="span">70 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 70%; background-color: #e3a6b6"></div>
+                </div>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="grid-list">
+
+            <li data-reveal="bottom">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-1.svg" width="52" height="52" loading="lazy" alt="web design icon">
+                </div>
+
+                <h3 class="h4 card-title">Web Design</h3>
+
+                <p class="card-text">
+                  Web design is the process of planning, designing, and implementing a website so that it's functional, visually appealing, and easy to use. Web designers use a multidisciplinary approach
+                 
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.25s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-2.svg" width="52" height="52" loading="lazy" alt="mobile design icon">
+                </div>
+
+                <h3 class="h4 card-title">Mobile Design</h3>
+
+                <p class="card-text">
+                  Mobile design encompasses aspects such as layout, navigation, typography, colors, iconography, and interactions to ensure seamless and engaging user experiences on mobile platforms.</p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.5s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-3.svg" width="52" height="52" loading="lazy"
+                    alt="web development icon">
+                </div>
+
+                <h3 class="h4 card-title">Development</h3>
+
+                <p class="card-text">
+                  Software development refers to a set of computer science activities that are dedicated to the process of creating, designing, deploying, and supporting software. </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.75s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-4.svg" width="52" height="52" loading="lazy" alt="web seo icon">
+                </div>
+
+                <h3 class="h4 card-title">SEO</h3>
+
+                <p class="card-text">
+                  In computer science, SEO stands for Search Engine Optimization, which is the process of improving a website's ranking in search engines like Google, Bing, and Yahoo. The goal of SEO is to increase a website's visibility in search results pages (SERPs) so that more people can find it, which can lead to more traffic and sales</p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="section project" id="Projects" aria-labelledby="project-label">
+        <div class="container">
+
+          <div class="title-wrapper" data-reveal="top">
+
             <div>
-                <div class="right">
-                    <img src="data:image/jpeg;base64,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" alt="">
+              <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
 
-                </div>
+              <p class="section-text">
+                Check out some of my latest projects with creative ideas.
+              </p>
             </div>
 
-        </div>
-        <div class=" s-icon ">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR9uJoqbGy9vGbVxzWg2ziu_3EO8Fg3YPNEA&salt=" height="70">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBjpnljtmJZw2KHW52BtCMFnjhmUGNxQO-rA&s
-                alt=" height="70">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcU5zPzb6MElYyY1nRnfyqgABMXOvhjfADVg&s
-            alt=" height="70">
-            <img src=data:image/jpeg;base64,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
-                alt="" height="70">
+            <a href="https://github.com/Samarth7272/REST-NEWS-" class="btn btn-secondary">See All Projects</a>
+
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card project-card-1" style="background-color: #f8f5fb">
+
+                <div class="card-content" data-reveal="left">
+
+                  <p class="card-tag" style="color: #a07cc5">Shopping Nike Shoes </p>
+
+                  <h3 class="h3 card-title">Nike Shoes Online </h3>
+
+                  <p class="card-text">
+                    I'm trying to design nike shoes website portal.The Nike Shopping Portal Theme is a visually captivating and user-centric web design template specifically tailored for an online shopping platform dedicated to Nike products.
+                  </p>
+
+                  <a href="https://www.nike.com/in/" class="btn-text" style="color: #a07cc5">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="right">
+                  <img src="./assets/images/nike.jpeg" width="350" height="100" loading="lazy" alt="Web Design"
+                    class="w-60">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card project-card-2" style="background-color: #f1f5fd">
+
+                <div class="card-content" data-reveal="right">
+
+                  <p class=" card-tag" style="color: #3f78e0">Mobile Design</p>
+
+                  <h3 class="h3 card-title">Rest News </h3>
+
+                  <p class="card-text">
+                    Representational State Transfer (REST) is a software architecture that imposes conditions on how an API should work. REST was initially created as a guideline to manage communication on a complex network like the internet.</p>
+
+                  <a href="#" class="btn-text" style="color: #3f78e0">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                  
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card project-card-3" style="background-color: #f5faf7">
+
+                <div class="card-content" data-reveal="left">
+
+                  <p class=" card-tag" style="color: #7cb798">Development</p>
+
+                  <h3 class="h3 card-title">✧˖°Practising some Questions </h3>
+
+                  <p class="card-text">
+                   By set time limit gives you the ability to answer the questions faster. Thus, your self-confidence increases
+                    
+                    </p>
+
+                  <a href="https://github.com/Samarth7272/Homework" class="btn-text" style="color: #7cb798">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="right">
+                  <img src="./assets/images/git ques.jpeg" width="400" height="300" loading="lazy" alt="Web Design"
+                    class="w-100">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card project-card-4" style="background-color: #fcf4f6">
+
+                <div class="card-content" data-reveal="left">
+
+                  <p class=" card-tag" style="color: #d16b86">Development</p>
+
+                  <h3 class="h3 card-title">✧˖°First Resume Page</h3>
+
+                  <p class="card-text">
+                    Creating First resume page </p>
+
+                  <a href="https://github.com/Samarth7272/Desktop" class="btn-text" style="color: #d16b86">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="right">
+                  <img src="./assets/images/resu.jpeg" width="500" height="300" loading="lazy" alt="Mobile Design"
+                    class="w-90">
+                </figure>
+
+              </div>
+            </li>
+
+          </ul>
 
         </div>
-    </header>
-    <footer></footer>
-        <p>2024 MyBrand. All rights reserved. © </p>
+      </section>
+
+      <section class="section contact" id="Contact" aria-label="contact">
+        <div class="container">
+
+          <div class="contact-card">
+
+            <div class="contact-content" data-reveal="left">
+
+              <div class="card-icon">
+                <img src="./assets/images/icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
+              </div>
+
+              <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
+
+              <p class="section-text">
+                 Having  any questions? Reach out to me from
+                this contact form and I will get back to you shortly.
+              </p>
+
+            </div>
+
+            <form action="https://formspree.io/f/manwzwea" method="POST" class="contact-form" data-reveal="right">
+
+              <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Name *" required class="input-field">
+
+                <input type="email" name="email_address" placeholder="Email *" required class="input-field">
+              </div>
+
+              <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
+
+              <button type="submit" class="btn btn-secondary">Send message</button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        © 2024 codewithSamarth. All rights reserved.
+      </p>
+      <ul class="social-list">
+
+        <li>
+          <a href="https://github.com/Samarth7272" class="social-link">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/samarth-shukla-b72003293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link">
+            <ion-icon name='logo-linkedin'></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/User72723232" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/samarth7272_?igsh=cnplNjB6ZmlmYmQw" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/@Samarth0002" class="social-link">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
